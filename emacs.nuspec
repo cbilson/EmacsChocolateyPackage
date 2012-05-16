@@ -7,7 +7,7 @@
     <authors>The GNU Project</authors>
     <owners>Chris Bilson</owners>
     <summary>The emacs editor</summary>
-    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing. Gist for the chocolatey package: https://gist.github.com/6f16e0d6c88b92cc08d1</description>
+    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing. Chocolatey package source: git@github.com:cbilson/EmacsChocolateyPackage.git</description>
     <projectUrl>http://www.gnu.org/software/emacs/</projectUrl>
     <tags>emacs editor admin</tags>
     <copyright>Copyright (C) 2012 Free Software Foundation, Inc.</copyright>
