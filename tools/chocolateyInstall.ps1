@@ -1,2 +1,2 @@
-Install-ChocolateyZipPackage 'Emacs' 'http://alpha.gnu.org/gnu/emacs/windows/emacs-20120319-r107630-bin-i386.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+Install-ChocolateyZipPackage 'Emacs' 'http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-24.1-bin-i386.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
