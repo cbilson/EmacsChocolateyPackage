@@ -3,7 +3,7 @@
   <metadata>
     <id>Emacs</id>
     <title>Emacs</title>
-    <version>24.1</version>
+    <version>24.2</version>
     <authors>The GNU Project</authors>
     <owners>Chris Bilson</owners>
     <summary>The emacs editor</summary>
