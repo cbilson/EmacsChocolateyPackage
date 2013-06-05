@@ -4,9 +4,9 @@
 
 Use [[http://chocolatey.org/][Chocolatey]] to install this package:
 
-```powershell
+#+BEGIN_SRC powershell
 cinst emacs
-```
+#+END_SRC
 
 * Hacking
 
