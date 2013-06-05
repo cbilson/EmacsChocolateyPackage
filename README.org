@@ -1,0 +1,19 @@
+#+TITLE: EmacsChocolateyPackage
+
+* Installation
+
+Use [[http://chocolatey.org/][Chocolatey]] to install this package:
+
+```powershell
+cinst emacs
+```
+
+* Hacking
+
+Ah, yes, the real reason I made this readme. I can never remember how
+to deploy this.
+
+  1. CD to the directory where you've checked out the source.
+  2. Type `cpack`.
+
+To deploy, just go to the chocolatey website and upload the package.
