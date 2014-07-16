@@ -1,14 +1,14 @@
-#+TITLE: EmacsChocolateyPackage
+# EmacsChocolateyPackage
 
-* Installation
+## Installation
 
-Use [[http://chocolatey.org/][Chocolatey]] to install this package:
+Use [Chocolatey](http://chocolatey.org/) to install this package:
 
-#+BEGIN_SRC powershell
-cinst emacs
-#+END_SRC
+```powershell
+> cinst emacs
+```
 
-* Hacking
+## Hacking
 
 Ah, yes, the real reason I made this readme. I can never remember how
 to deploy this.
@@ -18,7 +18,7 @@ to deploy this.
 
 To deploy, just go to the chocolatey website and upload the package.
 
-** Even Better
+### Even Better
 
 ```powershell
 > cpack
@@ -30,9 +30,9 @@ To deploy, just go to the chocolatey website and upload the package.
 > cpush
 ```
 
-* Versioning
+## Versioning
 
-Apparently I need a unique version number to use the `cpush` command 
+Apparently I need a unique version number to use the `cpush` command
 mentioned above, so from now on, the emacs chocolatey package will
 be versioned with first 3 segments from the emacs version, final
 segment as the date of the release, as described [here](https://github.com/chocolatey/chocolatey/wiki/CreatePackages#package-fix-version-notation).
