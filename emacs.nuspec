@@ -3,11 +3,11 @@
   <metadata>
     <id>Emacs</id>
     <title>Emacs</title>
-    <version>24.3.0.20140716</version>
+    <version>24.3.0.20140721</version>
     <authors>The GNU Project</authors>
     <owners>Chris Bilson</owners>
     <summary>The Emacs editor</summary>
-    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing. Chocolatey package source: git@github.com:cbilson/EmacsChocolateyPackage.git</description>
+    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing. Chocolatey package source: http://github.com/cbilson/EmacsChocolateyPackage</description>
     <projectUrl>http://www.gnu.org/software/emacs/</projectUrl>
     <tags>emacs editor</tags>
     <copyright>Copyright (C) 2014 Free Software Foundation, Inc.</copyright>
