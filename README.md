@@ -16,6 +16,15 @@ to deploy this.
   1. CD to the directory where you've checked out the source.
   2. Type `cpack`.
 
+To install from your checkout, just:
+
+```powershell
+> # In the project root, after cpack'ing...
+> cinst Emacs -source $pwd
+```
+
+## Deploy to Chocolatey.org
+
 To deploy, just go to the chocolatey website and upload the package.
 
 ### Even Better
@@ -28,13 +37,6 @@ To deploy, just go to the chocolatey website and upload the package.
 > nuget setApiKey deadbeef-dead-beef-dead-deaddeadbeef -Source http://chocolatey.org/
 ...
 > cpush
-```
-
-To install from your checkout, just:
-
-```powershell
-> # In the project root, after cpack'ing...
-> cinst Emacs -source $pwd
 ```
 
 ## Versioning
