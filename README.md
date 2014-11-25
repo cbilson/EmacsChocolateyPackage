@@ -30,6 +30,13 @@ To deploy, just go to the chocolatey website and upload the package.
 > cpush
 ```
 
+To install from your checkout, just:
+
+```powershell
+> # In the project root, after cpack'ing...
+> cinst Emacs -source $pwd
+```
+
 ## Versioning
 
 Apparently I need a unique version number to use the `cpush` command
