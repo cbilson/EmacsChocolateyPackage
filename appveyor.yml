@@ -1,0 +1,22 @@
+#---------------------------------#
+#      environment configuration  #
+#---------------------------------#
+# os: WMF 5
+
+# version: 10.0.10586.{build}
+
+configuration: Release
+
+platform: Any CPU
+
+build_script:
+  - ps: |
+      # Create Chocolately Package
+      Choco Pack
+      $version = ([xml](Get-Content .\emacs.nuspec)).package.metadata.version
+      # Try to install the package
+      Choco Install Emacs -source .\ -forcex86
+      Choco Uninstall Emacs
+      Choco Install Emacs -source .\
+      # save the artifact
+      Push-AppveyorArtifact ".\Emacs.$version.nupkg"
