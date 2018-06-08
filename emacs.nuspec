@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Emacs</id>
+    <id>emacs</id>
     <title>Emacs</title>
-    <version>25.1.0.20160917</version>
+    <version>26.1.0.20180603</version>
     <authors>The GNU Project</authors>
     <owners>Chris Bilson</owners>
     <summary>The Emacs editor</summary>
