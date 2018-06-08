@@ -1,9 +1,38 @@
-$emacsNameVersion = 'emacs-25.1'
-$url = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)-i686-w64-mingw32.zip"
-$url64 = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)-x86_64-w64-mingw32.zip"
-$toolsDir =  Split-Path -parent $MyInvocation.MyCommand.Definition
-Install-ChocolateyZipPackage 'Emacs' $url $toolsDir $url64 `
-  -Checksum e4874839e6d164e74b023f091cd2f4545aeeee190a895c91b49670e11dfadaf7 `
-  -ChecksumType 'SHA256' `
-  -Checksum64 dd64f517c58226ccc385b6d06124a581337a4420b7e519664ed93fbbc505f2f9 `
-  -ChecksumType64 'SHA256'
+$packageName = 'emacs'
+$emacsNameVersion = 'emacs-26.1'
+$url = "https://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)-i686.zip"
+$url64 = "https://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)-x86_64.zip"
+$installDir =  $(Split-Path -parent $MyInvocation.MyCommand.Definition) + '/' + $packageName
+
+$packageArgs = @{
+    packageName    = $packageName
+    unzipLocation  = $installDir
+    url            = $url
+    url64bit       = $url64
+    checksum       = 'd8c1486304462a368911acc4628ba5433d5d6af6a25511504f324a3cd405131b'
+    checksumType   = 'sha256'
+    checksum64     = '995a9da608c8dca75c385769c1c7bf212ac39713c0d14e9af2e718363b5e8264'
+    checksumType64 = 'sha256'
+}
+
+Install-ChocolateyZipPackage @packageArgs
+
+# Exclude executables from getting shim
+$guiExes = @("emacs.exe", "emacsclientw.exe")
+$shimExes = @("runemacs.exe", "emacsclient.exe")
+
+$guiFilter = "^" + $($guiExes -join "$|^") + "$"
+$shimFilter = "^" + $($shimExes -join "$|^") + "$"
+
+$files = Get-Childitem $installDir -include *.exe -recurse
+
+foreach ($file in $files) {
+    if ($file.Name -match $guiFilter) {
+        #generate an gui file
+        New-Item "$file.gui" -type file -force | Out-Null
+    }
+    elseif (-not ($file.Name -match $shimFilter)) {
+        #generate an ignore file
+        New-Item "$file.ignore" -type file -force | Out-Null
+    }
+}
