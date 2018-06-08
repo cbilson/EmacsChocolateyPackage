@@ -4,11 +4,14 @@
     <id>emacs</id>
     <title>Emacs</title>
     <version>26.1.0.20180701</version>
+    <packageSourceUrl>https://github.com/enko/EmacsChocolateyPackage</packageSourceUrl>
     <authors>The GNU Project</authors>
     <owners>Tim Schumacher</owners>
     <summary>The Emacs editor</summary>
-    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing. Chocolatey package source: http://github.com/cbilson/EmacsChocolateyPackage</description>
+    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing.</description>
+    <releaseNotes>https://www.gnu.org/software/emacs/</releaseNotes>
     <projectUrl>http://www.gnu.org/software/emacs/</projectUrl>
+    <projectSourceUrl>https://github.com/emacs-mirror/emacs</projectSourceUrl>
     <tags>emacs editor</tags>
     <copyright>Copyright (C) 2018 Free Software Foundation, Inc.</copyright>
     <licenseUrl>http://www.gnu.org/software/emacs/manual/html_node/emacs/Distrib.html</licenseUrl>
