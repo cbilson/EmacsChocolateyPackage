@@ -16,8 +16,26 @@ $packageArgs = @{
     checksum64     = 'e73febe3f3ce5918c871fa4195e2561599c425635f2100ddd1327eeb052a0d7d'
     checksumType64 = 'sha256'
 }
-
 Install-ChocolateyZipPackage @packageArgs
+
+# Add aditional binaries from deps package
+$emacsDepsVersion = "emacs-$($majorVersion)"
+
+$packageArgs = @{
+    packageName    = $packageName
+    unzipLocation  = $installDir
+    url            = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-$($majorVersion)/$($emacsDepsVersion)-i686-deps.zip"
+    url64bit       = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-$($majorVersion)/$($emacsDepsVersion)-x86_64-deps.zip"
+    checksum       = '4ff9057d4407f2d1149f158a2920acd09c31eff12a09ba25dc1776a3978f41ad'
+    checksumType   = 'sha256'
+    checksum64     = '3501e0c7f31cbf98ef7ac5cbbc8bae04ef4a72f52b00898965a8d702c4a5fae7'
+    checksumType64 = 'sha256'
+}
+
+Install-ChocolateyZipPackage @depPackageArgs -specificFolder 'bin'
+Install-ChocolateyZipPackage @depPackageArgs -specificFolder 'etc'
+Install-ChocolateyZipPackage @depPackageArgs -specificFolder 'libexec'
+Install-ChocolateyZipPackage @depPackageArgs -specificFolder 'ssl'
 
 # Exclude executables from getting shim
 $guiExes = @("emacs.exe", "emacsclientw.exe")

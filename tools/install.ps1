@@ -28,7 +28,7 @@ $packageArgs = @{
   url64bit       = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-$($majorVersion)/$($emacsDepsVersion)-x86_64-deps.zip"
   checksum       = '4ff9057d4407f2d1149f158a2920acd09c31eff12a09ba25dc1776a3978f41ad'
   checksumType   = 'sha256'
-  checksum64     = '3501E0C7F31CBF98EF7AC5CBBC8BAE04EF4A72F52B00898965A8D702C4A5FAE7'
+  checksum64     = '3501e0c7f31cbf98ef7ac5cbbc8bae04ef4a72f52b00898965a8d702c4a5fae7'
   checksumType64 = 'sha256'
 }
 
