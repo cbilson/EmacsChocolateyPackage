@@ -1,18 +1,18 @@
-$emacsNameVersion = 'emacs-25.3'
-$url = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)-i686.zip"
-$url64 = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsNameVersion)_1-x86_64.zip"
+$emacsNameVersion = 'emacs-26.1'
+$url = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-26/$($emacsNameVersion)-i686.zip"
+$url64 = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-26/$($emacsNameVersion)-x86_64.zip"
 $toolsDir =  Split-Path -parent $MyInvocation.MyCommand.Definition
 Install-ChocolateyZipPackage 'Emacs' $url $toolsDir $url64 `
-  -Checksum d166faece3a3cb55fb9bd240724265649a0c599fac0ee0da2ebb0753d1b31ad9 `
+  -Checksum D8C1486304462A368911ACC4628BA5433D5D6AF6A25511504F324A3CD405131B `
   -ChecksumType 'SHA256' `
-  -Checksum64 716698025746cd38684a939702aacee6080064224cce517b055b8a182c693423 `
+  -Checksum64 995A9DA608C8DCA75C385769C1C7BF212AC39713C0D14E9AF2E718363B5E8264 `
   -ChecksumType64 'SHA256'
 
-$emacsDepsVersion = 'emacs-25'
-$deps = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsDepsVersion)-i686-deps.zip"
-$deps64 = "http://ftp.gnu.org/pub/gnu/emacs/windows/$($emacsDepsVersion)-x86_64-deps.zip"
+$emacsDepsVersion = 'emacs-26'
+$deps = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-26/$($emacsDepsVersion)-i686-deps.zip"
+$deps64 = "http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-26/$($emacsDepsVersion)-x86_64-deps.zip"
 Install-ChocolateyZipPackage 'Emacs' $deps $toolsDir $deps64 `
-  -Checksum 37daea32cc054ae6b709c015704bdf7b7459c63b1be27cdd590d2807e50b236a `
+  -Checksum 4ff9057d4407f2d1149f158a2920acd09c31eff12a09ba25dc1776a3978f41ad `
   -ChecksumType 'SHA256' `
-  -Checksum64 d928e6caaeb5267f978dad0a54c90b0ea6f31ad384f43d8a6bb54c67d2b2f184 `
+  -Checksum64 3501E0C7F31CBF98EF7AC5CBBC8BAE04EF4A72F52B00898965A8D702C4A5FAE7 `
   -ChecksumType64 'SHA256'
