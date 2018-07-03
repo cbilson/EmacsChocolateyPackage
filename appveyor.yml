@@ -1,14 +1,14 @@
-environment:
-  chocolateyApiKey:
-    secure: CPNSQvKUxo8opfNw9helbxnbt62zLmFDFt9fAbCUBuT9VWsQlzDw4f0t9rmbRCe9
+# environment:
+#   chocolateyApiKey:
+#     secure: CPNSQvKUxo8opfNw9helbxnbt62zLmFDFt9fAbCUBuT9VWsQlzDw4f0t9rmbRCe9
 
 build: off
 
-deploy:
-  - provider: Environment
-    name: production
-    on:
-      APPVEYOR_REPO_TAG: true
+# deploy:
+#   - provider: Environment
+#     name: production
+#     on:
+#       APPVEYOR_REPO_TAG: true
 
 
 test_script:
@@ -20,12 +20,12 @@ test_script:
       Choco Uninstall Emacs
       Choco Install Emacs -source .\
 
-deploy_script:
-  - ps: |
-      # Create Chocolately Package
-      Choco Pack
-      # save the artifact
-      $version = ([xml](Get-Content .\emacs.nuspec)).package.metadata.version
-      Push-AppveyorArtifact ".\Emacs.$version.nupkg"
-      Choco apikey --key $chocolateyApiKey --source https://push.chocolatey.org/
-      Choco push ".\Emacs.$version.nupkg" --source https://push.chocolatey.org/
+# deploy_script:
+#   - ps: |
+#       # Create Chocolately Package
+#       Choco Pack
+#       # save the artifact
+#       $version = ([xml](Get-Content .\emacs.nuspec)).package.metadata.version
+#       Push-AppveyorArtifact ".\Emacs.$version.nupkg"
+#       Choco apikey --key $chocolateyApiKey --source https://push.chocolatey.org/
+#       Choco push ".\Emacs.$version.nupkg" --source https://push.chocolatey.org/
