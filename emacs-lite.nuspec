@@ -21,6 +21,7 @@ Since the full version of Emacs installer is heavy with a lot of small unneeded 
     <bugTrackerUrl >https://github.com/enko/EmacsChocolateyPackage/issues</bugTrackerUrl>
   </metadata>
   <files>
+    <file src="tools\*.psm1" target="tools" />
     <file src="tools\install-lite.ps1" target="tools\chocolateyInstall.ps1" />
   </files>
 </package>
