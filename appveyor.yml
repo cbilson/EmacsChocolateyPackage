@@ -14,11 +14,18 @@ build: off
 test_script:
   - ps: |
       # Create Chocolately Package
-      Choco Pack
+      Choco Pack .\emacs.nuspec
       # Try to install the package
-      Choco Install Emacs -source .\ -forcex86
-      Choco Uninstall Emacs
-      Choco Install Emacs -source .\
+      Choco Install emacs -source .\ -forcex86 -y
+      Choco Uninstall emacs
+      Choco Install emacs -source .\ -y
+
+      # Create Emacs lite Chocolately Package
+      Choco Pack .\emacs-lite.nuspec
+      # Try to install the package
+      Choco Install emacsw-lite -source .\ -forcex86 -y
+      Choco Uninstall emacsw-lite -y
+      Choco Install emacsw-lite -source .\ -y
 
 # deploy_script:
 #   - ps: |
