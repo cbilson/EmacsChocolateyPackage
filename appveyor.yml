@@ -17,15 +17,15 @@ test_script:
       Choco Pack .\emacs.nuspec
       # Try to install the package
       Choco Install emacs -source .\ -forcex86 -y
-      Choco Uninstall emacs
+      Choco Uninstall emacs -y
       Choco Install emacs -source .\ -y
 
-      # Create Emacs lite Chocolately Package
-      Choco Pack .\emacs-lite.nuspec
+      # Create Emacs full Chocolately Package
+      Choco Pack .\emacs-full.nuspec
       # Try to install the package
-      Choco Install emacsw-lite -source .\ -forcex86 -y
-      Choco Uninstall emacsw-lite -y
-      Choco Install emacsw-lite -source .\ -y
+      Choco Install emacs-full -source .\ -forcex86 -y
+      Choco Uninstall emacs-full -y
+      Choco Install emacs-full -source .\ -y
 
 # deploy_script:
 #   - ps: |
