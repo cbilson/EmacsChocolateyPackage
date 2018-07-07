@@ -43,8 +43,8 @@ $DepsPackageArgs = @{
 
 function New-ShimHintFiles() {
     # Exclude executables from getting shimmed
-    $guiExes = @("emacs.exe", "emacsclientw.exe")
-    $shimExes = @("runemacs.exe", "emacsclient.exe")
+    $guiExes = @("runemacs.exe", "emacsclientw.exe")
+    $shimExes = @("emacs.exe", "emacsclient.exe")
 
     $guiFilter = "^" + $($guiExes -join "$|^") + "$"
     $shimFilter = "^" + $($shimExes -join "$|^") + "$"
