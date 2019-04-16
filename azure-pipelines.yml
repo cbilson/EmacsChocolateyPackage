@@ -23,7 +23,7 @@ jobs:
     pool:
       vmImage: windows-2019
     dependsOn: test
-    condition: and(success(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     steps:
       - powershell: |
           Choco Pack .\emacs.nuspec
