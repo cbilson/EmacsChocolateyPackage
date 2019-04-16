@@ -6,8 +6,11 @@
 trigger:
 - master
 
+pool:
+  vmImage: windows-2019
+
 steps:
-- script: |
+- powershell: |
       # Create Chocolately Package
       Choco Pack .\emacs.nuspec
       # Try to install the package
