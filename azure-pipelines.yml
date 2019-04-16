@@ -1,18 +1,8 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
-pool:
-  vmImage: windows-2019
-
 jobs:
-  - job: test-sources
+  - job: testsources
     displayName: Test the emacs package
-    steps:
+    pool: windows-2019
+    steps: 
       - powershell: |
           # Create Chocolately Package
           Choco Pack .\emacs.nuspec
@@ -27,8 +17,9 @@ jobs:
           Choco Install emacs-full -source .\ -forcex86 -y
           Choco Uninstall emacs-full -y
           Choco Install emacs-full -source .\ -y
-  - job: deploy-package
+  - job: deploypackage
     displayName: Deploy the emacs package to chocolatey.com
+    pool: windows-2019
     condition: eq(variables['build.sourceBranch'], 'refs/heads/master')
     steps:
       - powershell: |
