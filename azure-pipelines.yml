@@ -1,7 +1,8 @@
 jobs:
   - job: testsources
     displayName: Test the emacs package
-    pool: windows-2019
+    pool:
+      vmImage: windows-2019
     steps: 
       - powershell: |
           # Create Chocolately Package
@@ -19,7 +20,8 @@ jobs:
           Choco Install emacs-full -source .\ -y
   - job: deploypackage
     displayName: Deploy the emacs package to chocolatey.com
-    pool: windows-2019
+    pool:
+      vmImage: windows-2019
     condition: eq(variables['build.sourceBranch'], 'refs/heads/master')
     steps:
       - powershell: |
