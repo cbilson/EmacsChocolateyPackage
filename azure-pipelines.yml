@@ -1,5 +1,5 @@
 jobs:
-  - job: testsources
+  - job: test
     displayName: Test the emacs package
     pool:
       vmImage: windows-2019
@@ -18,11 +18,12 @@ jobs:
           Choco Install emacs-full -source .\ -forcex86 -y
           Choco Uninstall emacs-full -y
           Choco Install emacs-full -source .\ -y
-  - job: deploypackage
+  - job: deploy
     displayName: Deploy the emacs package to chocolatey.com
     pool:
       vmImage: windows-2019
-    condition: eq(variables['build.sourceBranch'], 'refs/heads/master')
+    dependsOn: test
+    condition: and(success(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
     steps:
       - powershell: |
           Choco Pack .\emacs.nuspec
