@@ -3,7 +3,7 @@
   <metadata>
     <id>emacs</id>
     <title>Emacs</title>
-    <version>26.1.0.20180701</version>
+    <version>26.1.0.20190416</version>
     <packageSourceUrl>https://github.com/enko/EmacsChocolateyPackage</packageSourceUrl>
     <authors>The GNU Project</authors>
     <owners>Tim Schumacher</owners>
